@@ -43,6 +43,21 @@ Responsive Design, Animation Effects, UI/UX Design, Problem Solving
 
 ---
 
-## 📂 Portfolio Structure
+---
 
+## 📫 Contact Me
+
+- Email: frahatfatima81@gmail.com  
+- LinkedIn: https://www.linkedin.com/in/frahatfatima  
+- GitHub: https://github.com/frahatfatima  
+
+---
+
+## Support
+
+If you like my work, give this repository a star!
+
+---
+
+> “Strive for progress, not perfection.”
 
