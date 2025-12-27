@@ -7,7 +7,7 @@ Welcome to my portfolio showcasing my projects, skills, and journey in tech and 
 
 ## About Me
 
-** BSCS student **
+**BSCS student**
 - Passionate about coding, creative problem-solving, and design
 - Interested in **Web Designing, UI/UX, Graphic designing and Frontend Technologies**
 - Always learning new tools and technologies
