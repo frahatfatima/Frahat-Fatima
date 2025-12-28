@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Frahat Fatima</title>
+  <meta name="description" content="Contact Frahat Fatima – Email, LinkedIn. Reach out for internships, freelance projects, or collaborations.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Contact form styling */
+    .contact-form {
+      max-width: 600px;
+      margin: 30px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: var(--bg-soft);
+      color: var(--text);
+      font-size: 1rem;
+      width: 100%;
+      resize: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="cursor"></div>
+<div id="scroll-progress"></div>
+
+<header>
+  <nav class="navbar">
+    <h2 class="logo">Frahat<span>.</span></h2>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content fade">
+      <h1>Contact <span>Me</span></h1>
+      <p>Have questions? Reach out to me.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT METHODS -->
+  <section class="section gray">
+    <h2 class="section-title fade">Get In Touch</h2>
+    <div class="grid">
+      <div class="card fade">
+        <h3>Email</h3>
+        <p><a href="mailto:frahatfatima81@gmail.com" style="color: var(--primary);">frahatfatima81@gmail.com</a></p>
+      </div>
+
+      <div class="card fade">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/frahatfatima" target="_blank" style="color: var(--primary);">linkedin.com/in/frahatfatima</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="section">
+    <h2 class="section-title fade">Send a Message</h2>
+    <form class="contact-form fade" action="mailto:frahatfatima81@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <div style="text-align:center;">
+        <button type="submit" class="btn magnetic">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Frahat Fatima — Frontend Developer & UI/UX Designer</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

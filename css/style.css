@@ -1,0 +1,107 @@
+:root {
+  --primary: #ff7a00;
+  --bg: #0f0f0f;
+  --bg-soft: #161616;
+  --card: rgba(255,255,255,0.05);
+  --text: #eaeaea;
+  --muted: #9a9a9a;
+}
+
+/* Reset & global */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter', sans-serif; background:var(--bg); color:var(--text); line-height:1.7; scroll-behavior:smooth; }
+a { text-decoration:none; }
+ul { list-style:none; }
+
+/* Header & Nav */
+header { position:fixed; width:100%; background:rgba(15,15,15,0.9); backdrop-filter:blur(10px); z-index:100; }
+nav { max-width:1200px; margin:auto; padding:18px; display:flex; justify-content:space-between; align-items:center; }
+.logo span { color:var(--primary); }
+nav ul { display:flex; gap:30px; }
+nav a { color:var(--text); font-weight:500; }
+nav a.active { color:var(--primary); }
+
+/* Hero */
+.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding-top:120px; }
+.hero h1 span { color:var(--primary); }
+
+/* Buttons */
+.btn { display:inline-block; margin-top:25px; padding:14px 34px; background:var(--primary); color:#000; border-radius:40px; font-weight:600; transition:0.3s; cursor:pointer; border:none; }
+.btn:hover { transform:translateY(-5px); box-shadow:0 0 30px rgba(255,122,0,0.4); }
+
+/* Sections */
+.section { max-width:1200px; margin:auto; padding:100px 20px; }
+.gray { background:var(--bg-soft); }
+.section-title { text-align:center; font-size:2.4rem; position:relative; margin-bottom:20px; }
+.section-title::after { content:''; display:block; width:0; height:3px; margin:14px auto 0; background:linear-gradient(90deg,var(--primary),#ffb347); animation:lineGrow 1.2s ease forwards; }
+@keyframes lineGrow { to { width:80px; } }
+.section-text { max-width:700px; margin:auto; text-align:center; color:var(--muted); }
+
+/* Grid & Cards */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:35px; margin-top:60px; }
+.card, .work-card, .step { background:var(--card); padding:32px; border-radius:14px; backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.08); box-shadow:0 20px 40px rgba(0,0,0,0.5); transition:0.3s; }
+.card:hover, .work-card:hover, .step:hover { transform:translateY(-10px); box-shadow:0 0 0 1px rgba(255,122,0,0.4),0 30px 60px rgba(0,0,0,0.8); }
+
+/* Timeline */
+.timeline { max-width:700px; margin:auto; display:flex; flex-direction:column; gap:25px; }
+.step { border-left:5px solid var(--primary); }
+
+/* Footer */
+footer { text-align:center; padding:30px; background:#000; color:var(--muted); }
+
+/* Animations */
+.fade { opacity:0; transform:translateY(30px); transition:0.8s ease; }
+.fade.show { opacity:1; transform:translateY(0); }
+#scroll-progress { position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,var(--primary),#ffb347); z-index:2000; }
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255,122,0,0.7);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.15s ease-out;
+}
+
+/* Gradient text animation */
+.gradient-text {
+  background: linear-gradient(90deg, #ff7a00, #ffb347, #ff7a00);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  to { background-position: 200% center; }
+}
+
+/* Magnetic buttons */
+.magnetic { position: relative; transition: transform 0.2s ease; will-change: transform; }
+
+/* Fade in on page load */
+body { animation: pageFade 1s ease forwards; }
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width:768px){
+  nav ul { flex-direction: column; gap:15px; background:rgba(15,15,15,0.95); position:absolute; top:70px; right:0; width:200px; padding:20px; display:none; }
+  nav ul.show { display:flex; }
+}
+/* Page exit animation */
+body.page-exit {
+  animation: pageExit 0.4s forwards;
+}
+
+@keyframes pageExit {
+  from { opacity:1; transform: translateY(0); }
+  to { opacity:0; transform: translateY(15px); }
+}

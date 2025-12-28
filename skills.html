@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skills | Frahat Fatima</title>
+  <meta name="description" content="Skills of Frahat Fatima – Frontend Development, Design Tools, UI/UX, Typography.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Skill bars styling */
+    .skill-bar {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      overflow: hidden;
+      height: 24px;
+      margin: 8px 0;
+    }
+    .skill-bar-inner {
+      height: 100%;
+      background: var(--primary);
+      width: 0;
+      transition: width 1.2s ease;
+    }
+    .skill-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="cursor"></div>
+<div id="scroll-progress"></div>
+
+<header>
+  <nav class="navbar">
+    <h2 class="logo">Frahat<span>.</span></h2>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content fade">
+      <h1>My <span>Skills</span></h1>
+      <p>
+        A mix of technical and creative skills that help me design and develop
+        user-friendly, visually engaging digital experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS GRID -->
+  <section class="section gray">
+    <h2 class="section-title fade">Skills Overview</h2>
+    <div class="grid">
+
+      <!-- Frontend Development -->
+      <div class="card fade">
+        <h3>Frontend Development</h3>
+        <div class="skill">
+          <div class="skill-name">HTML</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:90%"></div></div>
+
+          <div class="skill-name">CSS</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:85%"></div></div>
+
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:75%"></div></div>
+        </div>
+      </div>
+
+      <!-- Design Tools -->
+      <div class="card fade">
+        <h3>Design Tools</h3>
+        <div class="skill">
+          <div class="skill-name">Photoshop</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:85%"></div></div>
+
+          <div class="skill-name">Illustrator</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:80%"></div></div>
+
+          <div class="skill-name">Dreamweaver</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:70%"></div></div>
+
+          <div class="skill-name">Canva</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:90%"></div></div>
+        </div>
+      </div>
+
+      <!-- Other Skills -->
+      <div class="card fade">
+        <h3>Other Skills</h3>
+        <div class="skill">
+          <div class="skill-name">UI/UX Principles</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:80%"></div></div>
+
+          <div class="skill-name">Typography</div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:75%"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section">
+    <h2 class="section-title fade">Interested in Working Together?</h2>
+    <p class="section-text fade">
+      I’m open to internships, freelance projects, and collaborative opportunities.
+      Let’s create something impactful together.
+    </p>
+    <div style="text-align:center;">
+      <a href="contact.html" class="btn magnetic fade">Contact Me</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Frahat Fatima — Frontend Developer & UI/UX Designer</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Animate skill bars when visible
+  const skillCards = document.querySelectorAll('.card');
+
+  const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const bars = entry.target.querySelectorAll('.skill-bar-inner');
+        bars.forEach(bar => {
+          bar.style.width = bar.style.width; // triggers CSS transition
+        });
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skillCards.forEach(card => skillObserver.observe(card));
+</script>
+</body>
+</html>
